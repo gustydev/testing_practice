@@ -6,6 +6,9 @@ class Calculator {
         return Number(x) - Number(y);
     }
     divide(x, y) {
+        if (Number(y) === 0) {
+            return undefined;
+        }
         return Number(x) / Number(y);
     }
     multiply(x, y) {

@@ -1,4 +1,5 @@
-const calc = require('./calculator');
+const calcExp = require('./calculator');
+const calc = new calcExp();
 
 // Addition
 test('add two numbers', () => {
@@ -44,7 +45,7 @@ test('divide floating points', () => {
 })
 
 test('divide negative numbers', () => {
-    expect(calc.divide(-10, -2)).toBe(2);
+    expect(calc.divide(-10, -2)).toBe(5);
 })
 
 test('divide by zero', () => {
