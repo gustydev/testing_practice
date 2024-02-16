@@ -20,12 +20,18 @@ function alphabetShift(factor) {
 }
 
 function caesarCipher(string, factor) {
+    if (factor === 0) {
+        return string;
+    }
     string = string.toUpperCase();
     const convert = alphabetShift(factor);
-    string.split('').forEach(letter => {
-
-    })
-    return string;
+    let newString;
+    for (let i = 0; i < string.length; i++) {
+        if (Object.keys(convert).includes(string[i])) {
+            newString += convert[string[i]];
+        }
+    }
+    return newString;
 }
 
 module.exports = caesarCipher;

@@ -1,4 +1,4 @@
-const caesar = require('./caesar');
+const caesar = require('./caesarCipher')
 
 test('factor of 3 left', () => {
     expect(caesar('The quick brown fox jumped over the lazy dog', -3)).toBe('QEB NRFZH YOLTK CLU GRJMP LSBO QEB IXWV ALD');
@@ -15,6 +15,6 @@ test('factor of 3 right', () => {
 })
 
 test('very high factors', () => {
-    expect(caesar('Test of very high factors', 133742069).toBe('MXLM HY OXKR ABZA YTVMHKL'))
-    expect(caesar('Test of very high factors', -123456789).toBe('MXLM HY OXKR ABZA YTVMHKL'))
+    expect(caesar('Test of very high factors', 133742069)).toBe('MXLM HY OXKR ABZA YTVMHKL')
+    expect(caesar('Test of very high factors', -123456789)).toBe('MXLM HY OXKR ABZA YTVMHKL')
 })
