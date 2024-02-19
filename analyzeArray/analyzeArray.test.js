@@ -36,19 +36,11 @@ test('array of 1 number', () => {
     })
 })
 
-test('empty array', () => {
-    expect(anal([])).toEqual({
-        average: 0,
-        min: 0,
-        max: 0,
-        length: 0
-    })
-})
-
 test('invalid inputs', () => {
-    expect(anal(['whee'])).toThrow(Error);
-    expect(anal(undefined)).toThrow(Error);
-    expect(anal(null)).toThrow(Error);
-    expect(anal()).toThrow(Error);
-    expect(anal(['1', '2', '3', '4'])).toThrow(Error);
+    expect(() => {anal(['whee'])}).toThrow();
+    expect(() => {anal(undefined)}).toThrow();
+    expect(() => {anal(null)}).toThrow();
+    expect(() => {anal()}).toThrow();
+    expect(() => {anal(['1', '2', '3', '4'])}).toThrow();
+    expect(() => {anal([])}).toThrow();
 })
