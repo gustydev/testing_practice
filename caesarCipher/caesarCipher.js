@@ -25,13 +25,13 @@ function caesarCipher(string, factor) {
     }
     string = string.toUpperCase();
     const convert = alphabetShift(factor);
-    let newString;
-    for (let i = 0; i < string.length; i++) {
-        if (Object.keys(convert).includes(string[i])) {
-            newString += convert[string[i]];
+    const newStr = string.split('');
+    for (let i = 0; i < newStr.length; i++) {
+        if (Object.keys(convert).includes(newStr[i])) {
+            newStr[i] = convert[`${newStr[i]}`];
         }
     }
-    return newString;
+    return newStr.join('');
 }
 
 module.exports = caesarCipher;
